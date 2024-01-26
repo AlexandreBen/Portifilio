@@ -16,6 +16,8 @@
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
+    --azul-color: #0267e4;
+    --verde-color: #09e18f;
 }
 
 html {
@@ -29,7 +31,7 @@ body {
 }
 
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -42,9 +44,12 @@ body {
 }
 
 .logo {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    font-weight: 600;
+    width: 10vw;
+    height: 10vh;
+}
+
+.logo img {
+    width: 8vw;
 }
 
 .navbar a {
@@ -78,8 +83,24 @@ section {
     padding: 0 9%;
 }
 
+.img-perfil {
+    position: absolute;
+    right: 0vw;
+    top: 0%;
+    width: 45vw;
+    height: 100vh;;
+    background-image: url('../images/alexandre_foto_home_2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.container-section {
+    width: 60vw;
+}
+
 .container-home {
-    max-width: 60vw;
+    max-width: 100vw;
 }
 
 .container-home h1 {
@@ -183,7 +204,7 @@ section {
     width: 40px;
     height: 40px;
     background: transparent;
-    border:  .2rem solid var(--main-color);
+    border:  .2rem solid var(--verde-color);
     border-radius: 50%;
     font-size: 25px;
     color: var(--main-color);
@@ -203,11 +224,298 @@ section {
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--main-color);
+    background: var(--verde-color);
     z-index: -1;
     transition: .5s;
 }
 
 .redes-sociais a:hover::before {
     width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 100%;
+    background: var(--bg-color);
+    opacity: .5;
+    transition: .6s;
+}
+
+.home-imgHover:hover {
+    background: transparent;
+    
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border:  .2rem solid var(--main-color);
+}
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top:  .4rem solid var(--second-bg-color);
+    border-bottom: .4rem solid var(--second-bg-color);
+    border-left: .4rem solid var(--verde-color);
+    border-right: .4rem solid var(--verde-color);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.btn-box.btns {
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box.btns a::before {
+    background: var(--second-bg-color);
+}
+
+.educacao {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+.educacao .educacao-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.educacao-row .educacao-coluna {
+    flex:  1 1 40rem;  
+}
+
+.educacao-coluna .title {
+    font-size: 2.5rem;
+    margin:  0 0 1.5rem 2rem;
+}
+
+.educacao-coluna  .educacao-box  {
+    border-left: .2rem solid var(--main-color);
+}
+
+.educacao-box .educacao-content {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.educacao-box .educacao-content::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -1.1rem;
+   width: 2rem;
+   height: 2rem;
+   background: var(--main-color);
+   border-radius: 50%;
+}
+
+.educacao-content .content {
+    position: relative;
+    padding: 1.5rem;
+    border:  .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+
+}
+
+.educacao-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.educacao-content .content:hover::before{
+    width: 100%;
+}
+
+.educacao-content .content .year {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.educacao-content .content .year i {
+    padding-right: .5rem;
+}
+
+.educacao-content .content h3 {
+    font-size: 2rem;
+}
+
+.habilidades {
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+
+.habilidades .habilidades-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.habilidades-row .habilidades-coluna {
+    flex: 1 1 40rem;
+}
+
+.habilidades-coluna .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.habilidades-box .habilidades-content {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.habilidades-box .habilidades-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.habilidades-box .habilidades-content:hover::before {
+    height: 100%;
+}
+
+.habilidades-content .progresso {
+    padding: 1rem 0;
+}
+
+.habilidades-content .progresso h3 {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.habilidades-content .progresso h3 span {
+    color: var(--text-color);
+}
+
+.habilidades-content .progresso .bar {
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--verde-color);
+    padding: .5rem;
+    margin: 1rem;
+}
+
+.habilidades-content .progresso .bar span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.habilidades-coluna:nth-child(1) .habilidades-content .progresso:nth-child(1) .bar span {
+    width: 90%;
+}
+
+.habilidades-coluna:nth-child(1) .habilidades-content .progresso:nth-child(2) .bar span {
+    width: 80%;
+}
+
+.habilidades-coluna:nth-child(1) .habilidades-content .progresso:nth-child(3) .bar span {
+    width: 50%;
+}
+
+.habilidades-coluna:nth-child(1) .habilidades-content .progresso:nth-child(4) .bar span {
+    width: 65%;
+}
+
+.habilidades-coluna:nth-child(1) .habilidades-content .progresso:nth-child(5) .bar span {
+    width: 60%;
+}
+
+.habilidades-coluna:nth-child(2) .habilidades-content .progresso:nth-child(1) .bar span {
+    width: 90%;
+}
+
+.habilidades-coluna:nth-child(2) .habilidades-content .progresso:nth-child(2) .bar span {
+    width: 80%;
+}
+
+.habilidades-coluna:nth-child(2) .habilidades-content .progresso:nth-child(3) .bar span {
+    width: 65%;
+}
+
+.habilidades-coluna:nth-child(2) .habilidades-content .progresso:nth-child(4) .bar span {
+    width: 40%;
+}
+
+.habilidades-coluna:nth-child(2) .habilidades-content .progresso:nth-child(5) .bar span {
+    width: 40%;
 }
